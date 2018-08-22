@@ -6,6 +6,7 @@
 export default {
   name: "callback",
   mounted() {
+    // eslint-disable-next-line
     this.$auth.handleAuthentication().then(data => {
       this.$router.push({ name: "home" });
     });

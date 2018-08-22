@@ -54,6 +54,7 @@ let auth = new Vue({
       webAuth.authorize();
     },
     logout() {
+      // eslint-disable-next-line
       return new Promise((resolve, reject) => {
         localStorage.removeItem("access_token");
         localStorage.removeItem("id_token");
