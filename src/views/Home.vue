@@ -1,7 +1,7 @@
 <template>
   <div id="home">
-        <nav class="navbar navbar-light bg-light">
-     <img src="../assets/logo.png">
+     <nav class="navbar navbar-light bg-light">
+      <img src="../assets/logo.png">
       <div>
         <img :src="$auth.user.picture" width="30" height="30">
         <span class="text-muted font-weight-light px-2">{{$auth.user.name}}</span>
@@ -95,3 +95,9 @@ export default {
   }
 };
 </script>
+
+<style>
+img {
+  padding: 15px;
+}
+</style>
