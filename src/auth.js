@@ -7,6 +7,7 @@ let webAuth = new auth0.WebAuth({
   clientID: "bxsfPxOP4o8QJKng0XY44JkXIXqb4wuY",
   // make sure port is 8080
   redirectUri: "http://localhost:8080/callback",
+  //redirectUri: "https://sharingcities.evothings.com/viable/callback",
   // we will use the api/v2/ to access the user information as payload
   audience: "https://kamidev.eu.auth0.com/userinfo",
   responseType: "token id_token",

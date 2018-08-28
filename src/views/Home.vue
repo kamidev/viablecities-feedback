@@ -45,7 +45,7 @@ export default {
     Vue.axios.get("https://localhost:4001/api/surveys/3").then(
       /*     Vue.axios
       .get("https://sharingcities.evothings.com/survey_api/surveys/3")
-      .then( */
+      .then(  */
       result => {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
