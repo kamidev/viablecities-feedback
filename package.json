@@ -20,7 +20,7 @@
     "surveyjs-widgets": "^1.0.56",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.1.1",
@@ -29,7 +29,7 @@
     "@vue/cli-plugin-unit-jest": "^3.1.1",
     "@vue/cli-service": "^3.1.4",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "@vue/test-utils": "^1.0.0-beta.25",
+    "@vue/test-utils": "^1.0.0-beta.26",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "vue-template-compiler": "^2.5.17"
