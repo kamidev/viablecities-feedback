@@ -1,14 +1,18 @@
 <template>
   <div id="home">
-     <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
       <img src="../assets/viablescities_logo_small.png">
       <div>
         <img :src="$auth.user.picture" width="30" height="30">
         <span class="text-muted font-weight-light px-2">{{$auth.user.name}}</span>
-        <button type="button" class="btn btn-outline-secondary btn-sm" @click="$auth.logout()">Logout</button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-sm"
+          @click="$auth.logout()"
+        >Logout</button>
       </div>
     </nav>
-    <survey :survey="survey" /> 
+    <survey :survey="survey"/>
   </div>
 </template>
 
@@ -43,7 +47,7 @@ export default {
   mounted() {
     // Get specified survey template from external API
     Vue.axios.get("https://localhost:4001/api/surveys/4").then(
-      /*     Vue.axios
+      /*    Vue.axios
       .get("https://sharingcities.evothings.com/survey_api/surveys/3")
       .then(  */
       result => {
