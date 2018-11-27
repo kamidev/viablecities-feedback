@@ -6,6 +6,7 @@ import Callback from "@/views/Callback.vue";
 Vue.use(Router);
 
 const router = new Router({
+  base: "/viable/",
   mode: "history",
   routes: [
     {
