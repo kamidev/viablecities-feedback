@@ -71,22 +71,22 @@ export default {
               user_id: 0 // TODO: add real user data here
             }
           };
-          axios.post("https://localhost:4001/api/answers", input).then(
-            /* axios
-              .post(
-                "https://sharingcities.evothings.com/survey_api/answers",
-                input
-              )
-              .then( */
-            // eslint-disable-next-line
-            result => {
-              this.response = answers;
-            },
-            error => {
+          //axios.post("https://localhost:4001/api/answers", input).then(
+          axios
+            .post(
+              "https://sharingcities.evothings.com/survey_api/answers",
+              input
+            )
+            .then(
               // eslint-disable-next-line
-              console.error(error);
-            }
-          );
+              result => {
+                this.response = answers;
+              },
+              error => {
+                // eslint-disable-next-line
+                console.error(error);
+              }
+            );
         });
         // Update empty survey with model loaded from API
         Vue.set(this, "survey", new_model);
