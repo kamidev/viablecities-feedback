@@ -47,9 +47,9 @@ export default {
   mounted() {
     // Get specified survey template from external API
     Vue.axios.get("https://localhost:4001/api/surveys/4").then(
-      /*    Vue.axios
-      .get("https://sharingcities.evothings.com/survey_api/surveys/3")
-      .then(  */
+      // Vue.axios
+      //   .get("https://sharingcities.evothings.com/viable_api/surveys/3")
+      //   .then(
       result => {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
@@ -71,22 +71,22 @@ export default {
               user_id: 0 // TODO: add real user data here
             }
           };
-          //axios.post("https://localhost:4001/api/answers", input).then(
-          axios
-            .post(
-              "https://sharingcities.evothings.com/survey_api/answers",
-              input
-            )
-            .then(
+          axios.post("https://localhost:4001/api/answers", input).then(
+            // axios
+            //   .post(
+            //     "https://sharingcities.evothings.com/survey_api/answers",
+            //     input
+            //   )
+            //   .then(
+            // eslint-disable-next-line
+            result => {
+              this.response = answers;
+            },
+            error => {
               // eslint-disable-next-line
-              result => {
-                this.response = answers;
-              },
-              error => {
-                // eslint-disable-next-line
-                console.error(error);
-              }
-            );
+              console.error(error);
+            }
+          );
         });
         // Update empty survey with model loaded from API
         Vue.set(this, "survey", new_model);
