@@ -46,56 +46,47 @@ export default {
   // See: https://vuejs.org/v2/api/#mounted
   mounted() {
     // Get specified survey template from external API
-    // Vue.axios.get("https://localhost:4001/api/surveys/4").then(
-    Vue.axios
-      .get("https://sharingcities.evothings.com/viable_api/surveys/3")
-      .then(
-        result => {
-          var survey_id = result.data.data.survey_id;
-          var template = result.data.data.survey_design;
-          var new_model = new SurveyVue.Model(template);
-          // Add model handler to save completed survey
-          new_model.onComplete.add(function(result) {
-            var answers = JSON.stringify(result.data);
-            var pseudonym = "anonymous";
-            if (result.data.want_followup) {
-              pseudonym = result.pseudonym;
-            }
-            // eslint-disable-next-line
-            console.log("Saved survey results: " + answers);
-            var input = {
-              answer: {
-                survey_id: survey_id,
-                survey_answers: result.data,
-                pseudonym: pseudonym,
-                user_id: 0 // TODO: add real user data here
-              }
-            };
-            // axios.post("https://localhost:4001/api/answers", input).then(
-            axios
-              .post(
-                "https://sharingcities.evothings.com/survey_api/answers",
-                input
-              )
-              .then(
-                // eslint-disable-next-line
-                result => {
-                  this.response = answers;
-                },
-                error => {
-                  // eslint-disable-next-line
-                  console.error(error);
-                }
-              );
-          });
-          // Update empty survey with model loaded from API
-          Vue.set(this, "survey", new_model);
-        },
-        error => {
+    Vue.axios.get(process.env.VUE_APP_API_QUESTIONS).then(
+      result => {
+        var survey_id = result.data.data.survey_id;
+        var template = result.data.data.survey_design;
+        var new_model = new SurveyVue.Model(template);
+        // Add model handler to save completed survey
+        new_model.onComplete.add(function(result) {
+          var answers = JSON.stringify(result.data);
+          var pseudonym = "anonymous";
+          if (result.data.want_followup) {
+            pseudonym = result.pseudonym;
+          }
           // eslint-disable-next-line
-          console.error(error);
-        }
-      );
+          console.log("Saved survey results: " + answers);
+          var input = {
+            answer: {
+              survey_id: survey_id,
+              survey_answers: result.data,
+              pseudonym: pseudonym,
+              user_id: 0 // TODO: add real user data here
+            }
+          };
+          axios.post(process.env.VUE_APP_API_ANSWERS, input).then(
+            // eslint-disable-next-line
+            result => {
+              this.response = answers;
+            },
+            error => {
+              // eslint-disable-next-line
+              console.error(error);
+            }
+          );
+        });
+        // Update empty survey with model loaded from API
+        Vue.set(this, "survey", new_model);
+      },
+      error => {
+        // eslint-disable-next-line
+        console.error(error);
+      }
+    );
   }
 };
 </script>

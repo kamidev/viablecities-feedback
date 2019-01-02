@@ -3,15 +3,12 @@ import Vue from "vue";
 
 // exchange the object with your own from the setup step above.
 let webAuth = new auth0.WebAuth({
-  domain: "kamidev.eu.auth0.com",
-  clientID: "bxsfPxOP4o8QJKng0XY44JkXIXqb4wuY",
-  // make sure local port is 8080
-  //redirectUri: "http://localhost:8080/callback",
-  redirectUri: "https://sharingcities.evothings.com/viable/callback",
-  // we will use the api/v2/ to access the user information as payload
-  audience: "https://sharingcities.evothings.com/viable/survey_api",
-  responseType: "token id_token",
-  scope: "openid profile"
+  domain: process.env.VUE_APP_AUTH_DOMAIN,
+  clientID: process.env.VUE_APP_AUTH_CLIENT_ID,
+  redirectUri: process.env.VUE_APP_AUTH_CALLBACK,
+  audience: process.env.VUE_APP_AUTH_AUDIENCE,
+  responseType: process.env.VUE_APP_AUTH_RESPONSETYPE,
+  scope: process.env.VUE_APP_AUTH_SCOPE
 });
 
 let auth = new Vue({
