@@ -46,7 +46,13 @@ export default {
   // See: https://vuejs.org/v2/api/#mounted
   mounted() {
     // Get specified survey template from external API
-    Vue.axios.get(process.env.VUE_APP_API_QUESTIONS).then(
+    Vue.axios(process.env.VUE_APP_API_QUESTIONS, {
+      method: "get",
+      auth: {
+        username: process.env.VUE_APP_API_USER,
+        password: process.env.VUE_APP_API_PWD
+      }
+    }).then(
       result => {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
@@ -68,7 +74,14 @@ export default {
               user_id: 0 // TODO: add real user data here
             }
           };
-          axios.post(process.env.VUE_APP_API_ANSWERS, input).then(
+          axios(process.env.VUE_APP_API_ANSWERS, {
+            method: "post",
+            data: input,
+            auth: {
+              username: process.env.VUE_APP_API_USER,
+              password: process.env.VUE_APP_API_PWD
+            }
+          }).then(
             // eslint-disable-next-line
             result => {
               this.response = answers;
