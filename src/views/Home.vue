@@ -9,7 +9,7 @@
           type="button"
           class="btn btn-outline-secondary btn-sm"
           @click="$auth.logout()"
-        >Logout</button>
+        >Logga ut</button>
       </div>
     </nav>
     <survey :survey="survey"/>
@@ -42,8 +42,6 @@ export default {
       survey: model
     };
   },
-  // Add event hooks: https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
-  // See: https://vuejs.org/v2/api/#mounted
   mounted() {
     // Get specified survey template from external API
     Vue.axios(process.env.VUE_APP_API_QUESTIONS, {
