@@ -9,6 +9,8 @@ selenium-debug.log
 # local env files
 .env.local
 .env.*.local
+# Sensitive production values!
+.env.production
 
 # Log files
 npm-debug.log*
