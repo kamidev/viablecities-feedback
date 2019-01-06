@@ -62,7 +62,6 @@ export default {
           if (result.data.want_followup) {
             pseudonym = result.pseudonym;
           }
-          // eslint-disable-next-line
           console.log("Saved survey results: " + answers);
           var input = {
             answer: {
@@ -85,7 +84,6 @@ export default {
               this.response = answers;
             },
             error => {
-              // eslint-disable-next-line
               console.error(error);
             }
           );
@@ -94,7 +92,6 @@ export default {
         Vue.set(this, "survey", new_model);
       },
       error => {
-        // eslint-disable-next-line
         console.error(error);
       }
     );
