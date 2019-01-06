@@ -5,7 +5,8 @@ module.exports = {
   "default e2e tests": browser => {
     browser
       .url(process.env.VUE_DEV_SERVER_URL)
-      .waitForElementVisible("#auth0-lock-container-1", 5000)
+      .waitForElementVisible("div[class=login-container]", 5000)
+      .assert.title("Sign In with Auth0")
       .end();
   }
 };
