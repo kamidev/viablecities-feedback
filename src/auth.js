@@ -58,7 +58,10 @@ let auth = new Vue({
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
         localStorage.removeItem("user");
-        webAuth.authorize();
+        webAuth.logout({
+          returnTo: process.env.VUE_APP_AUTH_LOGOUT,
+          clientID: this.clientID
+        });
       });
     },
     isAuthenticated() {
