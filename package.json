@@ -13,13 +13,13 @@
   "dependencies": {
     "@vue/cli": "^3.3.0",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "auth0-js": "^9.9.0",
+    "auth0-js": "^9.9.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "popper.js": "^1.14.6",
     "survey-vue": "^1.0.65",
     "surveyjs-widgets": "^1.0.65",
-    "vue": "^2.5.21",
+    "vue": "^2.5.22",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.2"
   },
@@ -32,7 +32,7 @@
     "@vue/test-utils": "^1.0.0-beta.28",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.22"
   },
   "eslintConfig": {
     "root": true,
