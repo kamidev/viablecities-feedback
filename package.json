@@ -13,15 +13,15 @@
   "dependencies": {
     "@vue/cli": "^3.4.1",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "ajv": "^6.9.2",
+    "ajv": "^6.10.0",
     "auth0-js": "^9.10.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
-    "eslint": "^5.14.1",
+    "eslint": "^5.15.1",
     "popper.js": "^1.14.7",
-    "survey-vue": "^1.0.72",
-    "surveyjs-widgets": "^1.0.72",
+    "survey-vue": "^1.0.73",
+    "surveyjs-widgets": "^1.0.73",
     "vue": "^2.6.8",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.2"
@@ -62,5 +62,28 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+    ],
+    "testURL": "http://localhost/"
+  }
 }
