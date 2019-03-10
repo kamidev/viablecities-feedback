@@ -4,9 +4,9 @@
       <img src="../assets/viablescities_logo_small.png" />
       <div>
         <img :src="$auth.user.picture" width="30" height="30" />
-        <span class="text-muted font-weight-light px-2">
-          {{ $auth.user.name }}
-        </span>
+        <span class="text-muted font-weight-light px-2">{{
+          $auth.user.name
+        }}</span>
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
@@ -33,11 +33,42 @@ Vue.use(VueAxios, axios);
 var Survey = SurveyVue.Survey;
 Survey.cssType = "bootstrap";
 
+function validateUrl(options) {
+  // eslint-disable-next-line
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  var regex = new RegExp(expression);
+  var url = options.value[0].url; // Note! This is undefined when row is first created
+
+  if (url != undefined) {
+    console.log(url);
+    if (url.match(regex)) {
+      // Do nothing if true
+    } else {
+      options.error =
+        "Felaktig webblänk! Inled med http:// eller https://, avsluta med korrekt domän";
+    }
+  }
+}
+function validateQuestions(sender, options) {
+  if (
+    options.name == "publications" ||
+    options.name == "websites" ||
+    options.name == "external_publications" ||
+    options.name == "external_events" ||
+    options.name == "digital_tools" ||
+    options.name == "databases"
+  ) {
+    // https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url#3809435
+    validateUrl(options);
+  }
+}
+
 export default {
   name: "app",
   components: {
     Survey
   },
+
   data() {
     var json = {
       title: "Ingen uppföljningsmall är tillgänglig för närvarande."
@@ -60,6 +91,7 @@ export default {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
         var new_model = new SurveyVue.Model(template);
+        new_model.onValidateQuestion.add(validateQuestions);
         // Add model handler to save completed survey
         new_model.onComplete.add(function(result) {
           var answers = JSON.stringify(result.data);
