@@ -33,23 +33,21 @@ Vue.use(VueAxios, axios);
 var Survey = SurveyVue.Survey;
 Survey.cssType = "bootstrap";
 
-function validateUrl(options) {
+// https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url#3809435
+function validateUrl(url, options) {
   // eslint-disable-next-line
   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   var regex = new RegExp(expression);
-  var url = options.value[0].url; // Note! This is undefined when row is first created
 
-  if (url != undefined) {
-    console.log(url);
-    if (url.match(regex)) {
-      // Do nothing if true
-    } else {
-      options.error =
-        "Felaktig webblänk! Inled med http:// eller https://, avsluta med korrekt domän";
-    }
+  if (url.match(regex)) {
+    // Do nothing if true
+  } else {
+    options.error =
+      "Var vänlig inled länkar med http:// eller https://, avsluta sedan med korrekt domän";
   }
 }
-function validateQuestions(sender, options) {
+
+function validateQuestion(sender, options) {
   if (
     options.name == "publications" ||
     options.name == "websites" ||
@@ -58,8 +56,12 @@ function validateQuestions(sender, options) {
     options.name == "digital_tools" ||
     options.name == "databases"
   ) {
-    // https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url#3809435
-    validateUrl(options);
+    for (var i = 0; i < options.value.length; i++) {
+      var url = options.value[i].url;
+      if (url != undefined) {
+        validateUrl(url, options);
+      }
+    }
   }
 }
 
@@ -91,7 +93,7 @@ export default {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
         var new_model = new SurveyVue.Model(template);
-        new_model.onValidateQuestion.add(validateQuestions);
+        new_model.onValidateQuestion.add(validateQuestion);
         // Add model handler to save completed survey
         new_model.onComplete.add(function(result) {
           var answers = JSON.stringify(result.data);
