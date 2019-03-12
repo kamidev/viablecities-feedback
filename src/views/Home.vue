@@ -1,22 +1,22 @@
 <template>
   <div id="home">
     <nav class="navbar navbar-light bg-light">
-      <img src="../assets/viablescities_logo_small.png">
+      <img src="../assets/viablescities_logo_small.png" />
       <div>
-        <img :src="$auth.user.picture" width="30" height="30">
+        <img :src="$auth.user.picture" width="30" height="30" />
         <span class="text-muted font-weight-light px-2">
-          {{
-          $auth.user.name
-          }}
+          {{ $auth.user.name }}
         </span>
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
           @click="$auth.logout()"
-        >Logga ut</button>
+        >
+          Logga ut
+        </button>
       </div>
     </nav>
-    <survey :survey="survey"/>
+    <survey :survey="survey" />
     <div id="surveyResult"></div>
   </div>
 </template>
@@ -43,7 +43,7 @@ function validateUrl(url, options) {
     // Do nothing if true
   } else {
     options.error =
-      "Var vänlig inled länkar med http:// eller https:// och vsluta med ett domännamn.";
+      "Var vänlig inled länkar med http:// eller https:// och avsluta med ett domännamn.";
   }
 }
 
