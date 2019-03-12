@@ -1,22 +1,22 @@
 <template>
   <div id="home">
     <nav class="navbar navbar-light bg-light">
-      <img src="../assets/viablescities_logo_small.png" />
+      <img src="../assets/viablescities_logo_small.png">
       <div>
-        <img :src="$auth.user.picture" width="30" height="30" />
-        <span class="text-muted font-weight-light px-2">{{
+        <img :src="$auth.user.picture" width="30" height="30">
+        <span class="text-muted font-weight-light px-2">
+          {{
           $auth.user.name
-        }}</span>
+          }}
+        </span>
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
           @click="$auth.logout()"
-        >
-          Logga ut
-        </button>
+        >Logga ut</button>
       </div>
     </nav>
-    <survey :survey="survey" />
+    <survey :survey="survey"/>
     <div id="surveyResult"></div>
   </div>
 </template>
@@ -43,7 +43,7 @@ function validateUrl(url, options) {
     // Do nothing if true
   } else {
     options.error =
-      "Var vänlig inled länkar med http:// eller https://, avsluta sedan med korrekt domän";
+      "Var vänlig inled länkar med http:// eller https:// och vsluta med ett domännamn.";
   }
 }
 
@@ -62,6 +62,15 @@ function validateQuestion(sender, options) {
         validateUrl(url, options);
       }
     }
+  }
+}
+
+function getLoggedinUser() {
+  var user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    return user.name;
+  } else {
+    return 0;
   }
 }
 
@@ -93,14 +102,11 @@ export default {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
         var new_model = new SurveyVue.Model(template);
+        // Add customs validation for specific questions
         new_model.onValidateQuestion.add(validateQuestion);
-        // Add model handler to save completed survey
+        // Add handler to save completed survey
         new_model.onComplete.add(function(result) {
           var answers = JSON.stringify(result.data);
-          var pseudonym = "anonymous";
-          if (result.data.want_followup) {
-            pseudonym = result.pseudonym;
-          }
           document.querySelector("#surveyResult").innerHTML =
             "result: " + answers;
           console.log("Saved survey results: " + answers);
@@ -108,8 +114,8 @@ export default {
             answer: {
               survey_id: survey_id,
               survey_answers: result.data,
-              pseudonym: pseudonym,
-              user_id: 0 // TODO: add real user data here
+              pseudonym: getLoggedinUser(),
+              user_id: 0
             }
           };
           axios(process.env.VUE_APP_API_ANSWERS, {
