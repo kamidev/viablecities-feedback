@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/viable"
-};
+  publicPath: '/viable'
+}

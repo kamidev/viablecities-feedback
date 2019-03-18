@@ -1,39 +1,39 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "@/views/Home.vue";
-import Callback from "@/views/Callback.vue";
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from '@/views/Home.vue'
+import Callback from '@/views/Callback.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 const router = new Router({
-  base: "/viable",
-  mode: "history",
+  base: '/viable',
+  mode: 'history',
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: Home
     },
     {
-      path: "/callback",
-      name: "callback",
+      path: '/callback',
+      name: 'callback',
       component: Callback
     }
   ]
-});
+})
 
 // very basic "setup" of a global guard
 router.beforeEach((to, from, next) => {
-  if (to.name == "callback") {
+  if (to.name == 'callback') {
     // check if "to"-route is "callback" and allow access
-    next();
+    next()
   } else if (router.app.$auth.isAuthenticated()) {
     // if authenticated allow access
-    next();
+    next()
   } else {
     // trigger auth0 login
-    router.app.$auth.login();
+    router.app.$auth.login()
   }
-});
+})
 
-export default router;
+export default router
