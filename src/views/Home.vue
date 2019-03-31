@@ -4,9 +4,9 @@
       <img src="../assets/viablescities_logo_small.png" />
       <div>
         <img :src="$auth.user.picture" width="30" height="30" />
-        <span class="text-muted font-weight-light px-2">{{
-          $auth.user.name
-        }}</span>
+        <span class="text-muted font-weight-light px-2">
+          {{ $auth.user.name }}
+        </span>
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
