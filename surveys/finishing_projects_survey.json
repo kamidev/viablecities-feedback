@@ -1,0 +1,363 @@
+{
+  "checkErrorsMode": "onValueChanged",
+  "completeText": { "sv": "Skicka in svaren" },
+  "completedHtml": "<p><h4>Tack för att du ville besvara enkäten!</p>",
+  "locale": "sv",
+  "pageNextText": { "sv": "Nästa" },
+  "pagePrevText": { "sv": "Föregående" },
+  "pages": [
+    {
+      "elements": [
+        {
+          "html": {
+            "sv": "<article><h2>Uppföljning av avslutade projekt</h2> <div><p>Nu börjar projekt som fått finansiering av Viable Cities att avslutas och det är snart dags att slutrapportera till Energimyndigheten. Detta görs i Energimyndighetens verktyg E-kanalen. Inom ramen för programmet Viable Cities gör vi också en kompletterande uppföljning i form av denna enkät.</p><p> Vi kommer att ta en uppföljande kontakt med varje projekt för att ha en dialog kring vad projektet lett fram till så långt och om steg framåt. Tack för att du fyller i denna uppföljningsenkät!</p></div></article>"
+          },
+          "name": "Intro",
+          "startWithNewLine": false,
+          "title": { "sv": "Intro" },
+          "type": "html"
+        },
+        {
+          "isRequired": true,
+          "name": "project_id",
+          "title": { "sv": "Ditt projekts diarienummer" },
+          "type": "text"
+        }
+      ],
+      "name": "intro"
+    },
+    {
+      "elements": [
+        {
+          "html": {
+            "sv": "<div><p><b>Vilka är de viktigaste resultaten från projektet?<b></p></div>\n<i>Viable Cities kommer att publicera en kort sammanfattning av de viktigaste resultaten från respektive projekt. Skriv en kort text om de viktigaste resultaten. Precisera gärna på vilket sätt resultatet kan bidra till omställning till klimatneutrala städer. Denna text kan komma att redigeras något innan publicering.</i>\n"
+          },
+          "name": "result_description",
+          "startWithNewLine": false,
+          "type": "html"
+        },
+        {
+          "isRequired": true,
+          "maxLength": 1500,
+          "name": "project_summary",
+          "placeHolder": {
+            "sv": "Max 1500 tecken inkl blanksteg. Skriv gärna med tanke på en bredare publik."
+          },
+          "title": { "sv": "Sammanfattning av projektresultat" },
+          "type": "comment"
+        },
+        {
+          "html": {
+            "sv": "<div><p><b>Vad planeras som nästa steg efter projektet?<b></p></div>\n<p><i>Viable Cities vill ha möjlighet att följa upp och om så är lämpligt kunna erbjuda stöd eller hänvisa till annan part. Beskriv därför planerade kommande steg.</i></p>"
+          },
+          "name": "next_step_after_project",
+          "type": "html"
+        },
+        {
+          "isRequired": true,
+          "maxLength": 1500,
+          "name": "next_step",
+          "placeHolder": { "sv": "Max 1500 tecken inkl blanksteg" },
+          "title": { "sv": "Nästa steg" },
+          "type": "comment"
+        }
+      ],
+      "name": "results",
+      "title": { "sv": "Resultat av projektet" }
+    },
+    {
+      "elements": [
+        {
+          "elements": [
+            {
+              "choices": [
+                { "text": { "sv": "Ja" }, "value": true },
+                { "text": { "sv": "Nej" }, "value": false }
+              ],
+              "isRequired": true,
+              "name": "publication",
+              "title": {
+                "sv": "Har projektet lett till publikationer från en eller flera av deltagande partners? Detta kan röra artiklar (vetenskapliga eller av annan typ), rapporter, filmer, bloggposter, podcasts eller liknande\n"
+              },
+              "type": "radiogroup"
+            },
+            {
+              "columns": [
+                {
+                  "cellType": "text",
+                  "isRequired": true,
+                  "name": "name",
+                  "title": "Namn"
+                },
+                {
+                  "cellType": "text",
+                  "name": "description",
+                  "title": "Beskrivning eller webblänk"
+                }
+              ],
+              "name": "publications",
+              "rowCount": 1,
+              "title": "Publikationer",
+              "type": "matrixdynamic",
+              "visibleIf": "{publication} = true"
+            },
+            {
+              "elements": [
+                {
+                  "choices": [
+                    { "text": { "sv": "Ja" }, "value": true },
+                    { "text": { "sv": "Nej" }, "value": false }
+                  ],
+                  "isRequired": true,
+                  "name": "website",
+                  "title": {
+                    "sv": "Har en webbplats skapats för projektet? Det kan även gälla en webbplats för en större satsning där projektet är en del."
+                  },
+                  "type": "radiogroup"
+                },
+                {
+                  "columns": [
+                    {
+                      "cellType": "text",
+                      "isRequired": true,
+                      "name": "description",
+                      "title": "Beskrivning"
+                    },
+                    {
+                      "cellType": "text",
+                      "isRequired": true,
+                      "name": "url",
+                      "title": "Webblänk"
+                    }
+                  ],
+                  "name": "websites",
+                  "rowCount": 1,
+                  "title": { "default": "Webbplatser", "sv": "Webbplatser" },
+                  "type": "matrixdynamic",
+                  "visibleIf": "{website} = true"
+                }
+              ],
+              "name": "web_panel",
+              "title": { "sv": "Webbplats" },
+              "type": "panel"
+            }
+          ],
+          "name": "publication_panel",
+          "title": { "sv": "Egna publikationer" },
+          "type": "panel"
+        }
+      ],
+      "name": "publishing",
+      "title": { "sv": "Egna kommunikationsinsatser" }
+    },
+    {
+      "elements": [
+        {
+          "elements": [
+            {
+              "choices": [
+                { "text": { "sv": "Ja" }, "value": true },
+                { "text": { "sv": "Nej" }, "value": false }
+              ],
+              "isRequired": true,
+              "name": "external_publication",
+              "title": {
+                "sv": "Har projektet lett till publicering i tidningar, facktidskrifter, inslag i radio eller tv eller liknande?"
+              },
+              "type": "radiogroup"
+            },
+            {
+              "columns": [
+                {
+                  "cellType": "text",
+                  "isRequired": true,
+                  "name": "name",
+                  "title": "Namn"
+                },
+                {
+                  "cellType": "text",
+                  "name": "description",
+                  "title": "Beskrivning eller webblänk"
+                }
+              ],
+              "name": "external_publications",
+              "rowCount": 1,
+              "title": {
+                "default": "Publikationer",
+                "sv": "Externa publikationer"
+              },
+              "type": "matrixdynamic",
+              "visibleIf": "{external_publication} = true"
+            },
+            {
+              "elements": [
+                {
+                  "choices": [
+                    { "text": { "sv": "Ja" }, "value": true },
+                    { "text": { "sv": "Nej" }, "value": false }
+                  ],
+                  "isRequired": true,
+                  "name": "external_event",
+                  "title": {
+                    "sv": "Har projektet presenterats på någon konferens, event, workshops? Frågan avser andra än de som organiserats internt med partners projektet."
+                  },
+                  "type": "radiogroup"
+                },
+                {
+                  "columns": [
+                    {
+                      "cellType": "text",
+                      "isRequired": true,
+                      "name": "name",
+                      "title": "Namn"
+                    },
+                    {
+                      "cellType": "text",
+                      "name": "description",
+                      "title": "Beskrivning eller webblänk"
+                    }
+                  ],
+                  "name": "external_events",
+                  "rowCount": 1,
+                  "title": { "default": "Publikationer", "sv": "Medverkan" },
+                  "type": "matrixdynamic",
+                  "visibleIf": "{external_event} = true"
+                }
+              ],
+              "name": "conference_panel",
+              "title": { "sv": "Medverkan i konferenser och dyl" },
+              "type": "panel"
+            }
+          ],
+          "name": "socialmedia_panel",
+          "title": { "sv": "Publicering i externa sammanhang\n\n" },
+          "type": "panel"
+        }
+      ],
+      "name": "publicity",
+      "title": { "sv": "Publicering i externa sammanhang" }
+    },
+    {
+      "elements": [
+        {
+          "elements": [
+            {
+              "choices": [
+                { "text": { "sv": "Ja" }, "value": true },
+                { "text": { "sv": "Nej" }, "value": false }
+              ],
+              "isRequired": true,
+              "name": "digital_tool",
+              "title": {
+                "sv": "Har digitala plattformar, metoder eller verktyg med koppling till projektet tagits fram?"
+              },
+              "type": "radiogroup"
+            },
+            {
+              "columns": [
+                {
+                  "cellType": "text",
+                  "isRequired": true,
+                  "name": "name",
+                  "title": "Namn"
+                },
+                {
+                  "cellType": "text",
+                  "isRequired": true,
+                  "name": "url",
+                  "title": "Webblänk"
+                },
+                {
+                  "cellType": "comment",
+                  "isRequired": true,
+                  "maxLength": 1500,
+                  "name": "description",
+                  "placeHolder": "Skriv gärna med tanke på en bredare publik. Max 1500 tecken inkl blanksteg.",
+                  "title": "Beskrivning"
+                },
+                {
+                  "cellType": "comment",
+                  "isRequired": true,
+                  "name": "future",
+                  "placeHolder": "Vad händer med framtagna resultat efter avslutat projekt? Publiceras något som öppen källkod? Max 1500 tecken inkl blanksteg.",
+                  "title": "Framtid"
+                }
+              ],
+              "name": "digital_tools",
+              "rowCount": 1,
+              "title": "Digitala plattformar, verktyg, metoder",
+              "type": "matrixdynamic",
+              "visibleIf": "{digital_tool} = true"
+            },
+            {
+              "elements": [
+                {
+                  "choices": [
+                    { "text": { "sv": "Ja" }, "value": true },
+                    { "text": { "sv": "Nej" }, "value": false }
+                  ],
+                  "isRequired": true,
+                  "name": "database",
+                  "title": {
+                    "sv": "Har databaser byggts upp för att samla data som genereras i projektet?"
+                  },
+                  "type": "radiogroup"
+                },
+                {
+                  "columns": [
+                    {
+                      "cellType": "text",
+                      "isRequired": true,
+                      "name": "name",
+                      "title": "Namn"
+                    },
+                    {
+                      "cellType": "text",
+                      "isRequired": true,
+                      "name": "url",
+                      "title": "Webblänk"
+                    },
+                    {
+                      "cellType": "comment",
+                      "isRequired": true,
+                      "maxLength": 1500,
+                      "name": "description",
+                      "placeHolder": "Beskriv databasens syfte och huvudsakliga innehåll. Max 1500 tecken inkl blanksteg.",
+                      "title": "Beskrivning"
+                    },
+                    {
+                      "cellType": "comment",
+                      "isRequired": true,
+                      "maxLength": 1500,
+                      "name": "future",
+                      "placeHolder": "Kommer insamlad data att göras tillgänglig efter avslutat projekt? Används licenser för Öppna Data? Max 1500 tecken inkl blanksteg.",
+                      "title": "Framtid"
+                    }
+                  ],
+                  "name": "databases",
+                  "rowCount": 1,
+                  "title": "Databaser",
+                  "type": "matrixdynamic",
+                  "visibleIf": "{database} = true"
+                }
+              ],
+              "name": "database_panel",
+              "title": { "sv": "Databaser" },
+              "type": "panel"
+            }
+          ],
+          "name": "tools_panel",
+          "title": { "sv": "Verktyg, metoder och data" },
+          "type": "panel"
+        }
+      ],
+      "name": "tools",
+      "title": { "sv": "Verktyg, metoder och data" }
+    }
+  ],
+  "showPageTitles": false,
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off",
+  "storeOthersAsComment": false,
+  "title": { "sv": "ViableCities Feedback" }
+}
