@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,9 +11,9 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
-    "@vue/cli": "^3.9.1",
+    "@vue/cli": "^3.9.2",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.1",
     "auth0-js": "^9.11.1",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
@@ -26,11 +26,11 @@
     "vue-router": "^3.0.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-e2e-nightwatch": "^3.9.0",
-    "@vue/cli-plugin-eslint": "^3.9.1",
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.9.2",
+    "@vue/cli-plugin-eslint": "^3.9.2",
     "@vue/cli-plugin-unit-jest": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-service": "^3.9.2",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
