@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,8 +13,8 @@
   "dependencies": {
     "@vue/cli": "^3.9.2",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "ajv": "^6.10.1",
-    "auth0-js": "^9.11.1",
+    "ajv": "^6.10.2",
+    "auth0-js": "^9.11.2",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "eslint": "^5.16.0",
