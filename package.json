@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "1.7.8",
+  "version": "1.7.9",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@vue/cli": "^4.0.0-rc.1",
-    "@vue/cli-plugin-e2e-nightwatch": "^4.0.0-rc.1",
-    "@vue/cli-service": "^4.0.0-rc.1",
+    "@vue/cli-plugin-e2e-nightwatch": "^4.0.0-rc.2",
+    "@vue/cli-service": "^4.0.0-rc.2",
     "@vue/eslint-config-prettier": "^4.0.1",
     "ajv": "^6.10.2",
     "auth0-js": "^9.11.3",
