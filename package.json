@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.6.2",
-    "@vue/cli": "^4.0.0-rc.3",
-    "@vue/cli-plugin-e2e-nightwatch": "^4.0.0-rc.3",
-    "@vue/cli-service": "^4.0.0-rc.3",
+    "@vue/cli": "^4.0.0-rc.4",
+    "@vue/cli-plugin-e2e-nightwatch": "^4.0.0-rc.4",
+    "@vue/cli-service": "^4.0.0-rc.4",
     "@vue/eslint-config-prettier": "^4.0.1",
     "ajv": "^6.10.2",
     "auth0-js": "^9.11.3",
@@ -33,7 +33,7 @@
     "@vue/cli-plugin-unit-jest": "^3.11.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-jest": "^24.9.0",
-    "chromedriver": "^76.0.1",
+    "chromedriver": "^77.0.0",
     "eslint": "^5.16.0",
     "geckodriver": "^1.18.0",
     "vue-template-compiler": "^2.6.10"
