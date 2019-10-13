@@ -4,12 +4,12 @@
 
 <script>
 export default {
-  name: 'callback',
+  name: "callback",
   mounted() {
     // eslint-disable-next-line
     this.$auth.handleAuthentication().then(data => {
-      this.$router.push({ name: 'home' })
-    })
+      this.$router.push({ name: "home" });
+    });
   }
-}
+};
 </script>
