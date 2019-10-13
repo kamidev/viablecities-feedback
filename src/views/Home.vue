@@ -4,9 +4,9 @@
       <img src="../assets/viablescities_logo_small.png" />
       <div>
         <img :src="$auth.user.picture" width="30" height="30" />
-        <span class="text-muted font-weight-light px-2">{{
-          $auth.user.name
-        }}</span>
+        <span class="text-muted font-weight-light px-2">
+          {{ $auth.user.name }}
+        </span>
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
@@ -36,7 +36,7 @@ Survey.cssType = "bootstrap";
 // https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url#3809435
 function validateUrl(url, options) {
   // eslint-disable-next-line
-  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   var regex = new RegExp(expression);
 
   if (url.match(regex)) {
