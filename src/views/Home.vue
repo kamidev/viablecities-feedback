@@ -105,15 +105,18 @@ export default {
         // Add handler to save completed survey
         new_model.onComplete.add(function(result) {
           var answers = JSON.stringify(result.data);
+          var project_id = JSON.stringify(result.data.project_id);
           document.querySelector("#surveyResult").innerHTML =
             "result: " + answers;
           console.log("Saved survey results: " + answers);
+          console.log("Project_id: " + project_id); 
           var input = {
             answer: {
               survey_id: survey_id,
               survey_answers: result.data,
               pseudonym: getLoggedinUser(),
-              user_id: 0
+              user_id: 0,
+              project_id: result.data.project_id
             }
           };
           axios(process.env.VUE_APP_API_ANSWERS, {
