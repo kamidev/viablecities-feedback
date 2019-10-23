@@ -109,7 +109,7 @@ export default {
           document.querySelector("#surveyResult").innerHTML =
             "result: " + answers;
           console.log("Saved survey results: " + answers);
-          console.log("Project_id: " + project_id); 
+          console.log("Project_id: " + project_id);
           var input = {
             answer: {
               survey_id: survey_id,
