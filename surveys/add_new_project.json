@@ -1,0 +1,222 @@
+{
+  "pages": [
+    {
+      "name": "administrative",
+      "title": { "sv": "Administrativt" },
+      "elements": [
+        {
+          "name": "project_title",
+          "type": "text",
+          "title": { "sv": "Projektnamn" },
+          "isRequired": true
+        },
+        {
+          "name": "project_id",
+          "type": "text",
+          "title": { "sv": "Diarienummer" },
+          "isRequired": true
+        },
+        {
+          "name": "dates",
+          "type": "multipletext",
+          "items": [
+            { "name": "start", "title": { "sv": "Start" }, "isRequired": true },
+            { "name": "end", "title": { "sv": "Slut" }, "isRequired": true }
+          ],
+          "title": { "sv": "Projekttid" }
+        }
+      ]
+    },
+    {
+      "name": "project_info",
+      "title": { "sv": "Projektinformation" },
+      "elements": [
+        {
+          "name": "project_organization",
+          "type": "text",
+          "title": { "sv": "Projektorganisation" },
+          "isRequired": true
+        },
+        {
+          "name": "project_type",
+          "type": "dropdown",
+          "title": { "sv": "Projekttyp" },
+          "choices": [
+            { "text": { "sv": "Förstudie" }, "value": "study" },
+            { "text": { "sv": "Forskningsprojekt" }, "value": "research" },
+            { "text": { "sv": "Innovationsprojekt" }, "value": "innovation" },
+            { "text": { "sv": "Demonstrationsprojekt" }, "value": "demo" }
+          ],
+          "isRequired": true
+        },
+        {
+          "name": "description",
+          "rows": 2,
+          "type": "comment",
+          "title": { "sv": "Beskrivning" },
+          "maxLength": 600,
+          "isRequired": true,
+          "placeHolder": {
+            "sv": "Max 600 tecken inkl blanksteg. Skriv gärna med tanke på en bredare publik."
+          }
+        },
+        {
+          "name": "link",
+          "type": "text",
+          "title": { "sv": "Projektets webbplats" },
+          "inputType": "url",
+          "isRequired": true
+        },
+        {
+          "name": "keywords",
+          "type": "comment",
+          "title": { "sv": "Nyckelord" }
+        }
+      ]
+    },
+    {
+      "name": "funding",
+      "title": { "sv": "Finansiering" },
+      "elements": [
+        {
+          "name": "budget",
+          "type": "multipletext",
+          "items": [
+            { "name": "funded", "title": "Sökt stöd", "inputType": "number" },
+            {
+              "name": "total_cost",
+              "title": { "sv": "Totalkostnad" },
+              "inputType": "number"
+            }
+          ],
+          "title": { "sv": "Budget" },
+          "isRequired": true,
+          "startWithNewLine": false
+        },
+        {
+          "name": "ratio_funded",
+          "type": "expression",
+          "title": "Andel sökt stöd:",
+          "expression": "{budget.funded} / {budget.total_cost}",
+          "displayStyle": "percent",
+          "startWithNewLine": false
+        },
+        {
+          "name": "other_financiers",
+          "type": "comment",
+          "title": { "sv": "Övriga finansiärer" }
+        },
+        {
+          "name": "other_recipients",
+          "type": "comment",
+          "title": { "sv": "Övriga mottagare" }
+        }
+      ]
+    },
+    {
+      "name": "theme_focus_matrix",
+      "elements": [
+        {
+          "name": "focus_lifestyle",
+          "type": "checkbox",
+          "title": { "sv": "Teman inom livstil & konsumtion" },
+          "choices": [
+            {
+              "text": { "sv": "Testbäddar, Living Labs" },
+              "value": "testbeds"
+            },
+            {
+              "text": { "sv": "Innovation, entrepenörskap" },
+              "value": "innovation"
+            },
+            {
+              "text": { "sv": "Finansiering, affärsmodeller" },
+              "value": "financing"
+            },
+            { "text": { "sv": "Styrning" }, "value": "management" },
+            {
+              "text": { "sv": "Intelligens, cybersäkerhet, etik" },
+              "value": "intelligence"
+            }
+          ]
+        },
+        {
+          "name": "focus_planning",
+          "type": "checkbox",
+          "title": { "sv": "Teman inom planering & byggd miljö" },
+          "choices": [
+            {
+              "text": { "sv": "Testbäddar, Living Labs" },
+              "value": "testbeds"
+            },
+            {
+              "text": { "sv": "Innovation, entrepenörskap" },
+              "value": "innovation"
+            },
+            {
+              "text": { "sv": "Finansiering, affärsmodeller" },
+              "value": "financing"
+            },
+            { "text": { "sv": "Styrning" }, "value": "management" },
+            {
+              "text": { "sv": "Intelligens, cybersäkerhet, etik" },
+              "value": "intelligence"
+            }
+          ]
+        },
+        {
+          "name": "focus_mobility",
+          "type": "checkbox",
+          "title": { "sv": "Teman inom mobilitet & tillgänglighet" },
+          "choices": [
+            {
+              "text": { "sv": "Testbäddar, Living Labs" },
+              "value": "testbeds"
+            },
+            {
+              "text": { "sv": "Innovation, entrepenörskap" },
+              "value": "innovation"
+            },
+            {
+              "text": { "sv": "Finansiering, affärsmodeller" },
+              "value": "financing"
+            },
+            { "text": { "sv": "Styrning" }, "value": "management" },
+            {
+              "text": { "sv": "Intelligens, cybersäkerhet, etik" },
+              "value": "intelligence"
+            }
+          ]
+        },
+        {
+          "name": "focus_infrastructure",
+          "type": "checkbox",
+          "title": { "sv": "Teman inom integrerad infrastruktur" },
+          "choices": [
+            {
+              "text": { "sv": "Testbäddar, Living Labs" },
+              "value": "testbeds"
+            },
+            {
+              "text": { "sv": "Innovation, entrepenörskap" },
+              "value": "innovation"
+            },
+            {
+              "text": { "sv": "Finansiering, affärsmodeller" },
+              "value": "financing"
+            },
+            { "text": { "sv": "Styrning" }, "value": "management" },
+            {
+              "text": { "sv": "Intelligens, cybersäkerhet, etik" },
+              "value": "intelligence"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "Projektuppgifter",
+  "locale": "sv",
+  "checkErrorsMode": "onValueChanged",
+  "showProgressBar": "top"
+}

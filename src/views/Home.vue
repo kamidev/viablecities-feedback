@@ -113,7 +113,8 @@ export default {
               survey_id: survey_id,
               survey_answers: result.data,
               pseudonym: getLoggedinUser(),
-              user_id: 0
+              user_id: 0,
+              project_id: result.data.project_id
             }
           };
           axios(process.env.VUE_APP_API_ANSWERS, {
