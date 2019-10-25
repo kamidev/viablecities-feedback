@@ -32,6 +32,12 @@
       "title": { "sv": "Projektinformation" },
       "elements": [
         {
+          "name": "project_organization",
+          "type": "text",
+          "title": { "sv": "Projektorganisation" },
+          "isRequired": true
+        },
+        {
           "name": "project_type",
           "type": "dropdown",
           "title": { "sv": "Projekttyp" },
