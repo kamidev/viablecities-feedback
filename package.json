@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -37,7 +37,7 @@
     "babel-eslint": "^10.0.3",
     "chromedriver": "^80.0.1",
     "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.0",
+    "eslint-plugin-vue": "^6.2.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
