@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,8 +22,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "popper.js": "^1.16.1",
     "prettier": "^1.19.1",
-    "survey-vue": "^1.5.13",
-    "surveyjs-widgets": "^1.5.13",
+    "survey-vue": "^1.5.15",
+    "surveyjs-widgets": "^1.5.15",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-router": "^3.1.6"
@@ -33,11 +33,11 @@
     "@vue/cli-plugin-e2e-nightwatch": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
     "@vue/cli-plugin-unit-jest": "^4.2.3",
-    "@vue/test-utils": "1.0.0-beta.31",
+    "@vue/test-utils": "1.0.0-beta.32",
     "babel-eslint": "^10.1.0",
     "chromedriver": "^80.0.1",
     "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.1",
+    "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
