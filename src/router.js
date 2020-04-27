@@ -12,14 +12,14 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
     },
     {
       path: "/callback",
       name: "callback",
-      component: Callback
-    }
-  ]
+      component: Callback,
+    },
+  ],
 });
 
 // very basic "setup" of a global guard

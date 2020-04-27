@@ -8,44 +8,44 @@ let webAuth = new auth0.WebAuth({
   redirectUri: process.env.VUE_APP_AUTH_CALLBACK,
   audience: process.env.VUE_APP_AUTH_AUDIENCE,
   responseType: process.env.VUE_APP_AUTH_RESPONSETYPE,
-  scope: process.env.VUE_APP_AUTH_SCOPE
+  scope: process.env.VUE_APP_AUTH_SCOPE,
 });
 
 let auth = new Vue({
   computed: {
     token: {
-      get: function() {
+      get: function () {
         return localStorage.getItem("id_token");
       },
-      set: function(id_token) {
+      set: function (id_token) {
         localStorage.setItem("id_token", id_token);
-      }
+      },
     },
     accessToken: {
-      get: function() {
+      get: function () {
         return localStorage.getItem("access_token");
       },
-      set: function(accessToken) {
+      set: function (accessToken) {
         localStorage.setItem("access_token", accessToken);
-      }
+      },
     },
     expiresAt: {
-      get: function() {
+      get: function () {
         return localStorage.getItem("expires_at");
       },
-      set: function(expiresIn) {
+      set: function (expiresIn) {
         let expiresAt = JSON.stringify(expiresIn * 1000 + new Date().getTime());
         localStorage.setItem("expires_at", expiresAt);
-      }
+      },
     },
     user: {
-      get: function() {
+      get: function () {
         return JSON.parse(localStorage.getItem("user"));
       },
-      set: function(user) {
+      set: function (user) {
         localStorage.setItem("user", JSON.stringify(user));
-      }
-    }
+      },
+    },
   },
   methods: {
     login() {
@@ -60,7 +60,7 @@ let auth = new Vue({
         localStorage.removeItem("user");
         webAuth.logout({
           returnTo: process.env.VUE_APP_AUTH_LOGOUT,
-          clientID: this.clientID
+          clientID: this.clientID,
         });
       });
     },
@@ -82,12 +82,12 @@ let auth = new Vue({
           }
         });
       });
-    }
-  }
+    },
+  },
 });
 
 export default {
-  install: function(Vue) {
+  install: function (Vue) {
     Vue.prototype.$auth = auth;
-  }
+  },
 };

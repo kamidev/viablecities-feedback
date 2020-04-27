@@ -75,16 +75,16 @@ function getLoggedinUser() {
 export default {
   name: "app",
   components: {
-    Survey
+    Survey,
   },
 
   data() {
     var json = {
-      title: "Ingen uppföljningsmall är tillgänglig för närvarande."
+      title: "Ingen uppföljningsmall är tillgänglig för närvarande.",
     };
     var model = new SurveyVue.Model(json);
     return {
-      survey: model
+      survey: model,
     };
   },
   mounted() {
@@ -93,17 +93,17 @@ export default {
       method: "get",
       auth: {
         username: process.env.VUE_APP_API_USER,
-        password: process.env.VUE_APP_API_PWD
-      }
+        password: process.env.VUE_APP_API_PWD,
+      },
     }).then(
-      result => {
+      (result) => {
         var survey_id = result.data.data.survey_id;
         var template = result.data.data.survey_design;
         var new_model = new SurveyVue.Model(template);
         // Add customs validation for specific questions
         new_model.onValidateQuestion.add(validateQuestion);
         // Add handler to save completed survey
-        new_model.onComplete.add(function(result) {
+        new_model.onComplete.add(function (result) {
           var answers = JSON.stringify(result.data);
           document.querySelector("#surveyResult").innerHTML =
             "result: " + answers;
@@ -114,22 +114,22 @@ export default {
               survey_answers: result.data,
               pseudonym: getLoggedinUser(),
               user_id: 0,
-              project_id: result.data.project_id
-            }
+              project_id: result.data.project_id,
+            },
           };
           axios(process.env.VUE_APP_API_ANSWERS, {
             method: "post",
             data: input,
             auth: {
               username: process.env.VUE_APP_API_USER,
-              password: process.env.VUE_APP_API_PWD
-            }
+              password: process.env.VUE_APP_API_PWD,
+            },
           }).then(
             // eslint-disable-next-line
             result => {
               this.response = answers;
             },
-            error => {
+            (error) => {
               console.error(error);
             }
           );
@@ -137,11 +137,11 @@ export default {
         // Update empty survey with model loaded from API
         Vue.set(this, "survey", new_model);
       },
-      error => {
+      (error) => {
         console.error(error);
       }
     );
-  }
+  },
 };
 </script>
 
