@@ -126,7 +126,7 @@ export default {
             },
           }).then(
             // eslint-disable-next-line
-            result => {
+            (result) => {
               this.response = answers;
             },
             (error) => {
