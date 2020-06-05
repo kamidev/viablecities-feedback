@@ -26,9 +26,10 @@
     "surveyjs-widgets": "^1.7.7",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.3.2"
   },
   "devDependencies": {
+    "@vue/babel-preset-app": "^4.4.1",
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-plugin-e2e-nightwatch": "^4.3.1",
     "@vue/cli-plugin-eslint": "^4.3.1",
