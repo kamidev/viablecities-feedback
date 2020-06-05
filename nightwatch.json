@@ -1,5 +1,6 @@
 {
   "test_settings": {
+    "globals_path": "globals.js",
     "chrome": {
       "desiredCapabilities": {
         "chromeOptions": {
