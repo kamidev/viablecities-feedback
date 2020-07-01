@@ -11,7 +11,7 @@
     "test": "vue-cli-service lint && vue-cli-service test:unit && vue-cli-service test:e2e"
   },
   "dependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.10.4",
     "@vue/cli": "^4.4.6",
     "@vue/cli-service": "^4.4.6",
     "@vue/eslint-config-prettier": "^6.0.0",
