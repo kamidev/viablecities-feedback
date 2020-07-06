@@ -15,7 +15,7 @@
     "@vue/cli": "^4.4.6",
     "@vue/cli-service": "^4.4.6",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "ajv": "^6.12.2",
+    "ajv": "^6.12.3",
     "auth0-js": "^9.13.3",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
