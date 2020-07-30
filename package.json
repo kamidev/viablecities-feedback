@@ -1,6 +1,6 @@
 {
   "name": "viablecities_feedback",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,8 +22,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "popper.js": "^1.16.1",
     "prettier": "^2.0.5",
-    "survey-vue": "^1.7.23",
-    "surveyjs-widgets": "^1.7.23",
+    "survey-vue": "^1.7.24",
+    "surveyjs-widgets": "^1.7.24",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-router": "^3.3.4"
