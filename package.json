@@ -19,7 +19,7 @@
     "auth0-js": "^9.14.0",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.2.0",
     "popper.js": "^1.16.1",
     "prettier": "^2.2.1",
     "survey-vue": "^1.8.0",
