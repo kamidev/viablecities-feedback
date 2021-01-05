@@ -36,7 +36,7 @@
     "@vue/cli-plugin-unit-jest": "^4.5.9",
     "@vue/test-utils": "1.1.1",
     "babel-eslint": "^10.1.0",
-    "chromedriver": "^87.0.1",
+    "chromedriver": "^87.0.5",
     "eslint": "^7.14.0",
     "eslint-plugin-vue": "^7.1.0",
     "vue-template-compiler": "^2.6.12"
